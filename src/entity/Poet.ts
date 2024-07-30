@@ -8,7 +8,7 @@ export class Poet {
     @Column({ nullable: true })
     nickName!: string;
 
-    @Column()
+    @Column({ nullable: true })
     fullName?: string;
 
     @Column({ nullable: true, type: 'date' })
@@ -22,6 +22,9 @@ export class Poet {
 
     @Column("text", { array: true, nullable: true })
     underState?: string[];
+    
+    @Column("text", { array: true, nullable: true })
+    era?: string[];
 
     @Column("text", { array: true, nullable: true })
     underRulers?: string[];

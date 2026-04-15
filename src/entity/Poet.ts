@@ -11,6 +11,12 @@ export class Poet {
     @Column({ nullable: true })
     fullName?: string;
 
+    @Column({ nullable: true, type: 'int' })
+    bornYear?: number;
+
+    @Column({ nullable: true, type: 'int' })
+    diedYear?: number;
+
     @Column({ nullable: true, type: 'date' })
     bornAt?: Date;
 
@@ -22,7 +28,7 @@ export class Poet {
 
     @Column("text", { array: true, nullable: true })
     underState?: string[];
-    
+
     @Column("text", { array: true, nullable: true })
     era?: string[];
 
@@ -32,12 +38,24 @@ export class Poet {
     @Column({ nullable: true })
     religion?: string;
 
+    @Column({ nullable: true, type: 'text' })
+    madhhab?: string;
+
     @Column("text", { array: true, nullable: true })
     bestKnownPoems?: string[];
+
+    @Column("text", { array: true, nullable: true })
+    poetryThemes?: string[];
 
     @Column({ nullable: true, type: 'boolean' })
     jahiliyyah?: boolean;
 
     @Column({ nullable: true, type: 'text' })
     qabilah?: string;
+
+    @Column({ nullable: true, type: 'text' })
+    biography?: string;
+
+    @Column({ nullable: true, type: 'text' })
+    nationality?: string;
 }

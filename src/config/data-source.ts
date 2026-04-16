@@ -6,8 +6,11 @@ dotenv.config()
 
 export const AppDataSource = new DataSource({
     type: "postgres",
-    database: process.env.DATABASE_NAME,
+    // database: process.env.DATABASE_NAME,
     url: process.env.DATABASE_URL,
+    ssl: {
+        rejectUnauthorized: false, 
+    },
     entities: [Poet],
     synchronize: process.env.DATABASE_SYNCHRONIZE === "true", // remove in production
     entityPrefix: "entity_",

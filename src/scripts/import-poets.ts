@@ -8,7 +8,7 @@ const importPoets = async () => {
     try {
         await AppDataSource.initialize();
         console.log("Data Source has been initialized!");
-        const filePath = path.join(__dirname, '../seed/poets.json');
+        const filePath = path.join(__dirname, '../seed/arabic_poets.json');
         console.log(`Importing data from ${filePath}...`);
         const fileContent = fs.readFileSync(filePath, 'utf-8');
         const poets: Poet[] = JSON.parse(fileContent);
